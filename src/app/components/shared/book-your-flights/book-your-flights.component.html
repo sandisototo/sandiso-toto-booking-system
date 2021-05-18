@@ -1,0 +1,76 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="heading">Book Your Flights</span>
+      </div>
+      <div class="col-md-6">
+        <label>
+          <span>From</span>
+          <input type="text" formControlName="from"
+            placeholder="Eg. Melbourne, Australia" required />
+        </label>
+        <div *ngIf="from.invalid && (from.dirty || from.touched)"
+          class="alert alert-danger clearfix">
+          <div *ngIf="from.errors.required || !from.errors.minLength">
+            From is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>
+          <span>To</span>
+          <input type="text" formControlName="to"
+            placeholder="Eg. New York, United States" required />
+        </label>
+        <div *ngIf="to.invalid && (to.dirty || to.touched)"
+          class="alert alert-danger clearfix">
+          <div *ngIf="to.errors.required || !from.errors.minLength">
+            To is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label>
+          <span>Departure</span>
+          <input type="date" formControlName="departure" required />
+        </label>
+        <div *ngIf="departure.invalid && (departure.dirty || departure.touched)"
+          class="alert alert-danger clearfix">
+          <div *ngIf="departure.errors.required">
+            Departure is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <label>
+          <span>Return</span>
+          <input type="date" formControlName="return" required />
+        </label>
+        <div *ngIf="return.invalid && (return.dirty || return.touched)"
+          class="alert alert-danger clearfix">
+          <div *ngIf="return.errors.required">
+            Return is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <label>
+          <span>Adults</span>
+          <input type="number" formControlName="adults" required />
+        </label>
+        <div *ngIf="adults.invalid && (adults.dirty || adults.touched)"
+          class="alert alert-danger clearfix">
+          <div *ngIf="adults.errors.required">
+            Adults is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button [disabled]="!formGroup.valid" class="btn btn-primary">
+          Search Flights
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

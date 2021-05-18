@@ -1,0 +1,21 @@
+<button (click)="changeBookingType('flights')" class="btn"
+  [ngClass]="{'active': bookingType === 'flights'}">
+  Flights
+</button>
+<button (click)="changeBookingType('hotels')" class="btn"
+  [ngClass]="{'active': bookingType === 'hotels'}">
+  Hotels
+</button>
+<button class="btn">
+  Flights + Hotels <small>Save</small>
+</button>
+<button class="btn">
+  Holidays
+</button>
+<div id="block">
+  <app-book-your-flights *ngIf="bookingType === 'flights'">
+  </app-book-your-flights>
+  <app-book-your-hotels *ngIf="bookingType === 'hotels'">
+  </app-book-your-hotels>
+  <div id="filler"></div>
+</div>

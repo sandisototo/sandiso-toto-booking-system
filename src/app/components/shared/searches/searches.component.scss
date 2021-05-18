@@ -1,0 +1,54 @@
+@import "~src/assets/css/variables.scss";
+
+// #TODO: mobile nav that doesn't having wrapping issues for mobile
+.btn {
+  margin-right  : 1px;
+  font-size     : 14px;
+  background    : darken(dimgrey, 10%);
+  color         : white;
+  text-transform: capitalize;
+  border-radius : 0;
+
+  &.active {
+    background: $burgundy;
+  }
+
+  small {
+    display    : inline-block;
+    padding    : 1px 5px;
+    font-weight: 700;
+    background : $burgundy;
+  }
+}
+
+#block {
+  position  : relative;
+  padding   : 30px 15px;
+  border-top: 5px solid $burgundy;
+
+  * {
+    position: relative;
+    z-index : 1;
+  }
+
+  #filler {
+    position  : absolute;
+    z-index   : 0;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    height    : 100%;
+    background: white;
+    opacity   : 0.95;
+  }
+}
+
+::ng-deep {
+  .heading {
+    display       : inline-block;
+    margin-bottom : 30px;
+    font-size     : 20px;
+    font-weight   : 600;
+    text-transform: uppercase;
+  }
+}

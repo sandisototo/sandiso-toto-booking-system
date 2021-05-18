@@ -1,0 +1,14 @@
+:host {
+  display        : flex;
+  justify-content: flex-end;
+
+  a {
+    display       : flex;
+    flex-direction: column;
+    padding       : 5px 0;
+    margin-left   : 20px;
+    color         : white;
+    width         : 20px;
+    text-align    : center;
+  }
+}
